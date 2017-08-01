@@ -22,7 +22,28 @@ Install webpack and babel:
 $ npm i webpack webpack-dev-server --save-dev
 $ npm i babel-core babel-loader babel-preset-latest babel-preset-react --save-dev
 $ touch .babelrc
-$ touch webpack.config.json
+$ touch webpack.config.js
 ```
 
-Create `webpack.config.json` file:
+Create `webpack.config.js` file:
+```javascript
+var path = require('path');
+
+module.exports = {
+  entry: path.resolve(__dirname + '/src/main.js'),
+  debug: true,
+  output: {
+    path.resolve(__dirname + '/dist/'),
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }
+    ]
+  }
+};
+```

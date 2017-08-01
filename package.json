@@ -1,0 +1,27 @@
+{
+  "name": "webpack3tutorial",
+  "version": "0.0.1",
+  "description": "A step by step guideline",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cintiamh/Webpack3Tutorial.git"
+  },
+  "author": "Cintia Higashi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cintiamh/Webpack3Tutorial/issues"
+  },
+  "homepage": "https://github.com/cintiamh/Webpack3Tutorial#readme",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  }
+}

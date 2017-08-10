@@ -92,10 +92,50 @@ $ npm i express --save
 
 Setting up the Server entry point (src/server.js):
 ```javascript
-import express from 'express';
+const express = require('express');
 
 const app = express();
 app.listen(3000, () => {
   console.log('App listening on port: 3000');
 });
 ```
+
+## Routing with Express
+
+Adding a `/test` path:
+```javascript
+const express = require('express');
+const app = express();
+app.get('/test', (req, res) => {
+  res.send('Test route success!');
+});
+app.listen(3000, () => {
+  console.log('App listening on port: 3000');
+});
+```
+
+and run:
+```
+$ node src/app.js
+```
+
+### Regular expression in routes
+
+Express supports regular expressions as routes.
+
+You can use `*` to handle any route that is not expected, for example:
+```javascript
+const express = require('express');
+const app = express();
+app.get('/test', (req, res) => {
+  res.send('Test route success!');
+});
+app.get('/*', (req, res) => {
+  res.send(`${req.url} route success!`);
+});
+app.listen(3000, () => {
+  console.log('App listening on port: 3000');
+});
+```
+
+## Adding middleware for view rendering
